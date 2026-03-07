@@ -80,15 +80,17 @@ enum Error {
 impl Display for Error {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         match self {
-            Self::ArgsLenInvalid(args_len) => write!(f, "Expected 1 argument, received {args_len}"),
+            Self::ArgsLenInvalid(args_len) => {
+                write!(f, "Expected 1 argument, received {args_len}.")
+            }
             Self::PathInvalid(relative_path_string) => {
-                write!(f, "Path not found: {relative_path_string}")
+                write!(f, "Path not found: {relative_path_string}.")
             }
-            Self::UnableToFindHome => write!(f, "Unable to find the HOME environment varible"),
+            Self::UnableToFindHome => write!(f, "Unable to find the HOME environment variable."),
             Self::UnableToWriteToOutputFile(error) => {
-                write!(f, "Unable to write to output file: {error}")
+                write!(f, "Unable to write to output file: {error}.")
             }
-            Self::UnableToOpenBrowser => write!(f, "Unable to open browser"),
+            Self::UnableToOpenBrowser => write!(f, "Unable to open browser."),
         }
     }
 }
