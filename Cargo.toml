@@ -2,5 +2,10 @@
 name = "viewimg"
 version = "0.1.0"
 edition = "2024"
+description = "This is a simple CLI written in Rust to open images in browsers. Images are updated at each interval (every 500 ms by default), which enables users to view their images while altering them."
+license = "MIT"
+repository = "https://github.com/emil-aagaard/viewimg"
+readme = "README.md"
+keywords = ["cli", "image", "viewer"]
 
 [dependencies]
