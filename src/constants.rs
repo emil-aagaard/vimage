@@ -1,3 +1,4 @@
+//! Module that contains the constants.
 /// Help message.
 pub const HELP_MESSAGE: &str = "\
 Usage:

@@ -1,7 +1,9 @@
+//! Module to handle paths.
 use std::{env::var, fs::canonicalize, path::PathBuf};
 
 use crate::error::Error;
 
+/// Constructs the output path.
 pub fn get_output_path(
     output_directory: &Option<String>,
     output_file_name: &String,
@@ -20,6 +22,7 @@ pub fn get_output_path(
     Ok(PathBuf::from(output_directory).join(output_file_name))
 }
 
+/// Prepends the full path.
 pub fn get_path(relative_path: &str) -> Result<PathBuf, Error> {
     canonicalize(relative_path).map_err(|_| Error::PathInvalid(relative_path.to_string()))
 }

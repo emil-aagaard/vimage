@@ -1,3 +1,4 @@
+//! Module to define errors.
 use std::{
     error,
     fmt::{self, Display, Formatter},
@@ -6,6 +7,7 @@ use std::{
 
 use crate::constants::HELP_MESSAGE;
 
+/// Errors.
 #[derive(Debug)]
 pub enum Error {
     NoArgs,

@@ -1,8 +1,10 @@
+//! Module that handles configuration.
 use crate::{
     constants::{DEFAULT_INTERVAL, DEFAULT_OUTPUT_FILE_NAME},
     error::Error,
 };
 
+/// Configuration.
 pub struct Config {
     /// Name of output file.
     pub output_file_name: String,
@@ -15,6 +17,7 @@ pub struct Config {
 }
 
 impl Config {
+    /// Creates the configuration from an iterator over the command line arguments.
     pub fn from_iter<'a, I>(mut iter: I) -> Result<Self, Error>
     where
         I: Iterator<Item = &'a String>,

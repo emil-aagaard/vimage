@@ -1,7 +1,9 @@
+//! Module to create HTML and open the browser.
 use std::{fs::write, path::PathBuf, process::Command};
 
 use crate::error::Error;
 
+/// Creates the HTML file.
 pub fn create_html(path: &PathBuf, output_path: &PathBuf, interval: u64) -> Result<(), Error> {
     let path = path.to_string_lossy();
     let html = format!(
@@ -23,6 +25,7 @@ pub fn create_html(path: &PathBuf, output_path: &PathBuf, interval: u64) -> Resu
     write(output_path, html.as_bytes()).map_err(|error| Error::UnableToWriteToOutputFile(error))
 }
 
+/// Opens the browser.
 pub fn open_browser(output_path: &PathBuf, open_command: &Option<String>) -> Result<(), Error> {
     if let Some(open_command) = open_command {
         Command::new(open_command).arg(output_path).spawn()

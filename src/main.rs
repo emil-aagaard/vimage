@@ -1,14 +1,3 @@
-//! # viewimg
-//!
-//! This is a simple CLI written in Rust to open images in browsers.
-//! Images are updated at each interval (every 500 ms by default),
-//! which enables users to view their images while altering them.
-//!
-//! ## Usage
-//!
-//! ```bash
-//! viewimg [file]
-//! ```
 use std::{env, process::exit};
 
 use viewimg::{
@@ -19,6 +8,7 @@ use viewimg::{
     path::{get_output_path, get_path},
 };
 
+/// Main function.
 fn main() {
     if let Err(error) = run() {
         eprintln!("Error: {}", error);
@@ -26,6 +16,7 @@ fn main() {
     }
 }
 
+/// Main flow.
 fn run() -> Result<(), Error> {
     let args: Vec<String> = env::args().collect();
     match args.get(1).map(String::as_str) {
