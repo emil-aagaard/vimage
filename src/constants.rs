@@ -2,12 +2,12 @@
 /// Help message.
 pub const HELP_MESSAGE: &str = "\
 Usage:
-    viewimg <FILE> [OPTIONS]
-    viewimg [COMMAND]
+    vimage <FILE> [OPTIONS]
+    vimage [COMMAND]
 
 Options:
     --output <FILENAME> File name of the output file.
-                        [default: `.viewimg.html`]
+                        [default: `.vimage.html`]
     --output-dir <DIR>  Directory of the output file.
                         [default (mac, linux): `HOME` environment variable.]
                         [default (windows): `USERPROFILE` environment variable.]
@@ -21,6 +21,6 @@ Options:
 Commands:
     help    Prints this message.";
 /// Default name of output file.
-pub const DEFAULT_OUTPUT_FILE_NAME: &str = ".viewimg.html";
+pub const DEFAULT_OUTPUT_FILE_NAME: &str = ".vimage.html";
 /// Default update interval (ms).
 pub const DEFAULT_INTERVAL: u64 = 500;

@@ -1,6 +1,6 @@
 use std::{env, process::exit};
 
-use viewimg::{
+use vimage::{
     browser::{create_html, open_browser},
     config::Config,
     constants::HELP_MESSAGE,
